@@ -2,7 +2,7 @@ import numpy as np
 
 student_marks = np.array([
     [78, 85, 90],   # Student 1
-    [32, 70, 60],   # Student 2
+    [62, 70, 60],   # Student 2
     [92, 88, 95],   # Student 3
     [45, 50, 55],   # Student 4
     [80, 75, 70]    # Student 5
@@ -48,3 +48,11 @@ while i < len(passed_student):
 
 print("Total number of passed students: " , np.sum(passed_student))
 print("Total number of failed students: " , len(passed_student) - np.sum(passed_student))
+
+student_average = np.mean(student_marks , axis=0)
+plt.figure(figsize=(10,5))
+plt.plot(subjects, student_average, marker = 'o')
+plt.xlabel("Subjects")
+plt.ylabel("Average marks")
+plt.title("Students marks analyzer")
+plt.show()
